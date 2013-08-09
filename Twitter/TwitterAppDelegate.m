@@ -7,15 +7,56 @@
 //
 
 #import "TwitterAppDelegate.h"
+#import "Tweets.h"
+#import "TwitterTableViewController.h"
+
+@interface TwitterAppDelegate ()
+
+-(NSString*)tweetsPath;
+
+@end
 
 @implementation TwitterAppDelegate
 
+-(NSString*)tweetsPath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docDir = [paths objectAtIndex:0];
+    NSString *fileName = [docDir stringByAppendingPathComponent:@"tweets.archive"];
+    return fileName;
+}
+
+#define tweetsKey @"tweets"
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    NSString *fileName = [self tweetsPath];
+    
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:fileName]) {
+        NSData *data = [[NSData alloc] initWithContentsOfFile:fileName];
+        NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
+        NSArray *s = [unarchiver decodeObjectForKey:tweetsKey];
+        self.tweets = [s mutableCopy];
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"PST"]];
+        self.refreshDateString = @"1970-01-01 00:00:00";
+        NSDate *refreshDate = [dateFormatter dateFromString:self.refreshDateString];
+        for (Tweets *tweet in self.tweets) {
+            NSDate *nextRefreshDate = [dateFormatter dateFromString:tweet.tstamp];
+            if ([nextRefreshDate compare:refreshDate] == NSOrderedDescending) {
+                refreshDate = nextRefreshDate;
+            }
+        }
+        self.refreshDateString = [dateFormatter stringFromDate:refreshDate];//Find out the latest time stamp
+        [unarchiver finishDecoding];
+    } else {
+        self.tweets = [[NSMutableArray alloc] init];
+    }
+    //self.tweets = [[NSMutableArray alloc] init];
+    //self.refreshDateString = @"1970-01-01 00:00:00";
+    self.userinfoArray = [[NSMutableArray alloc] init];
     return YES;
 }
 
@@ -29,6 +70,19 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    NSLog(@"applicationDidEnterBackground:");
+    NSString *fileName = [self tweetsPath];
+    NSMutableData *data = [[NSMutableData alloc] init];
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+    NSMutableArray *savedTweets = [[NSMutableArray alloc] init];
+    for (Tweets *tweet in self.tweets) {
+            NSLog(@"%@",tweet.tstamp);
+            [savedTweets addObject:tweet];
+    }
+    [archiver encodeObject:savedTweets forKey:tweetsKey];
+    [archiver finishEncoding];
+    [data writeToFile:fileName atomically:YES];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application

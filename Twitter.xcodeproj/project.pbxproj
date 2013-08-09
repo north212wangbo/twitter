@@ -16,6 +16,13 @@
 		2C126D6416E922C3008B9CB1 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C126D6316E922C3008B9CB1 /* Default.png */; };
 		2C126D6616E922C3008B9CB1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C126D6516E922C3008B9CB1 /* Default@2x.png */; };
 		2C126D6816E922C3008B9CB1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C126D6716E922C3008B9CB1 /* Default-568h@2x.png */; };
+		2C126D6F16E922D7008B9CB1 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C126D6E16E922D6008B9CB1 /* Storyboard.storyboard */; };
+		2C126D7216E9231B008B9CB1 /* TwitterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C126D7116E9231B008B9CB1 /* TwitterTableViewController.m */; };
+		2C126D7516E973CA008B9CB1 /* Tweets.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C126D7416E973CA008B9CB1 /* Tweets.m */; };
+		2C126D7916F925A3008B9CB1 /* twitter-57.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C126D7816F925A3008B9CB1 /* twitter-57.png */; };
+		2C126D7B16F92682008B9CB1 /* twitter-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C126D7A16F92682008B9CB1 /* twitter-114.png */; };
+		44D11FE516ED209900D0AA73 /* EditTwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D11FE416ED209900D0AA73 /* EditTwitterViewController.m */; };
+		44D11FE816EDA04500D0AA73 /* DeleteTwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D11FE716EDA04500D0AA73 /* DeleteTwitterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +39,17 @@
 		2C126D6316E922C3008B9CB1 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		2C126D6516E922C3008B9CB1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		2C126D6716E922C3008B9CB1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		2C126D6E16E922D6008B9CB1 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = ../Storyboard.storyboard; sourceTree = "<group>"; };
+		2C126D7016E9231B008B9CB1 /* TwitterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterTableViewController.h; sourceTree = "<group>"; };
+		2C126D7116E9231B008B9CB1 /* TwitterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterTableViewController.m; sourceTree = "<group>"; };
+		2C126D7316E973CA008B9CB1 /* Tweets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweets.h; sourceTree = "<group>"; };
+		2C126D7416E973CA008B9CB1 /* Tweets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweets.m; sourceTree = "<group>"; };
+		2C126D7816F925A3008B9CB1 /* twitter-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-57.png"; sourceTree = "<group>"; };
+		2C126D7A16F92682008B9CB1 /* twitter-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-114.png"; sourceTree = "<group>"; };
+		44D11FE316ED209900D0AA73 /* EditTwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTwitterViewController.h; sourceTree = "<group>"; };
+		44D11FE416ED209900D0AA73 /* EditTwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTwitterViewController.m; sourceTree = "<group>"; };
+		44D11FE616EDA04500D0AA73 /* DeleteTwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteTwitterViewController.h; sourceTree = "<group>"; };
+		44D11FE716EDA04500D0AA73 /* DeleteTwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteTwitterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +69,8 @@
 		2C126D4516E922C3008B9CB1 = {
 			isa = PBXGroup;
 			children = (
+				2C126D7A16F92682008B9CB1 /* twitter-114.png */,
+				2C126D7816F925A3008B9CB1 /* twitter-57.png */,
 				2C126D5716E922C3008B9CB1 /* Twitter */,
 				2C126D5016E922C3008B9CB1 /* Frameworks */,
 				2C126D4F16E922C3008B9CB1 /* Products */,
@@ -80,6 +100,15 @@
 			children = (
 				2C126D6016E922C3008B9CB1 /* TwitterAppDelegate.h */,
 				2C126D6116E922C3008B9CB1 /* TwitterAppDelegate.m */,
+				2C126D6E16E922D6008B9CB1 /* Storyboard.storyboard */,
+				44D11FE616EDA04500D0AA73 /* DeleteTwitterViewController.h */,
+				44D11FE716EDA04500D0AA73 /* DeleteTwitterViewController.m */,
+				44D11FE316ED209900D0AA73 /* EditTwitterViewController.h */,
+				44D11FE416ED209900D0AA73 /* EditTwitterViewController.m */,
+				2C126D7016E9231B008B9CB1 /* TwitterTableViewController.h */,
+				2C126D7116E9231B008B9CB1 /* TwitterTableViewController.m */,
+				2C126D7316E973CA008B9CB1 /* Tweets.h */,
+				2C126D7416E973CA008B9CB1 /* Tweets.m */,
 				2C126D5816E922C3008B9CB1 /* Supporting Files */,
 			);
 			path = Twitter;
@@ -155,6 +184,9 @@
 				2C126D6416E922C3008B9CB1 /* Default.png in Resources */,
 				2C126D6616E922C3008B9CB1 /* Default@2x.png in Resources */,
 				2C126D6816E922C3008B9CB1 /* Default-568h@2x.png in Resources */,
+				2C126D6F16E922D7008B9CB1 /* Storyboard.storyboard in Resources */,
+				2C126D7916F925A3008B9CB1 /* twitter-57.png in Resources */,
+				2C126D7B16F92682008B9CB1 /* twitter-114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +199,10 @@
 			files = (
 				2C126D5E16E922C3008B9CB1 /* main.m in Sources */,
 				2C126D6216E922C3008B9CB1 /* TwitterAppDelegate.m in Sources */,
+				2C126D7216E9231B008B9CB1 /* TwitterTableViewController.m in Sources */,
+				2C126D7516E973CA008B9CB1 /* Tweets.m in Sources */,
+				44D11FE516ED209900D0AA73 /* EditTwitterViewController.m in Sources */,
+				44D11FE816EDA04500D0AA73 /* DeleteTwitterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +282,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Twitter/Twitter-Prefix.pch";
 				INFOPLIST_FILE = "Twitter/Twitter-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -257,7 +295,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Twitter/Twitter-Prefix.pch";
 				INFOPLIST_FILE = "Twitter/Twitter-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -281,6 +321,7 @@
 				2C126D6D16E922C3008B9CB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

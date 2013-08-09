@@ -11,5 +11,9 @@
 @interface TwitterAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) NSMutableArray *tweets;
+@property (copy, nonatomic) NSString *refreshDateString;
+
+@property (strong, nonatomic) NSMutableArray *userinfoArray;    //store temporary 'wsuid' and 'handle' information
 
 @end
